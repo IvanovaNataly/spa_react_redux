@@ -1,0 +1,16 @@
+@import "colors.scss";
+
+.user-page {
+    background: $mainBackground;
+    width: 75%;
+    padding: 30px;
+
+
+    dt {
+        font-weight: 700;
+    }
+
+    h1, h2, h3 {
+        margin: 10px 0;
+    }
+}
