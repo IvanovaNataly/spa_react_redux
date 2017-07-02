@@ -1,46 +1,31 @@
 import React, { Component } from 'react';
-import userService from './UserService';
-import UserList from './UserList';
-import UserPage from './UserPage';
+import UserList from './usersList/UserList';
+import UserPage from './userPage/UserPage';
+import { connect } from 'react-redux';
 
 import './main.scss';
 
-export default class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            id: 1,
-            usersList: []
-        };
-        this.getUsers();
-    }
+class App extends Component {
 
-    getUsers() {
-        userService
-            .getUsers()
-            .then( this.changeListState.bind(this) )
-    }
-
-    changeListState(list) {
-        this.setState ({
-            usersList: list
-        } ) 
-    }
-
-    updateUser(myId) {
-        this.setState ({
-            id: parseInt(myId.target.getAttribute("id"))
-        } ) 
-    }
 
     render() {
         return (
             <div>
-                <UserList usersList={this.state.usersList} updateUser={this.updateUser.bind(this)}/>
-                <UserPage id={this.state.id}/>
+                <UserList/>
+                <UserPage selectedUser={this.props.selectedUser.details} 
+                            
+                            />
             </div>
         )
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        selectedUser: state.friends.selectedUser
+    }
+}
+
+export default connect(mapStateToProps, null)(App);
+//selectedUserPosts={this.props.selectedUser.posts}
 

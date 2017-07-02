@@ -21,6 +21,8 @@
     "jquery": "^3.2.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.1",
     "webpack": "^2.5.1"
   },
   "devDependencies": {

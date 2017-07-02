@@ -11,7 +11,7 @@ function appendPosts(post, index) {
 
 export default class UserPosts extends Component {
     render() {
-        if (!this.props.posts) { return (<article> "No posts represented"</article>) }
+        if (!this.props.posts) { return (<article> No posts represented</article>) }
 
         return (
             <article>

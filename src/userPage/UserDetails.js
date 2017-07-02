@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 export default class UserDetails extends Component {
     render() {
+        if(!this.props.user)
+            return <article>Please, choose a user</article>
         return (
             <article>
                 <h1>{this.props.user.name}</h1>
